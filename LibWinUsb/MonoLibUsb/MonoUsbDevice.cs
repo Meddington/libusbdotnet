@@ -314,15 +314,17 @@ namespace LibUsbDotNet.LudnMonoLibUsb
             return (UsbEndpointWriter) mActiveEndpoints.Add(epNew);
         }
 
-        /// <summary>
-        /// Sets the USB devices active configuration value. 
-        /// </summary>
-        /// <param name="config">The active configuration value. A zero value means the device is not configured and a non-zero value indicates the device is configured.</param>
-        /// <returns>True on success.</returns>
-        /// <remarks>
-        /// A USB device can have several different configurations, but only one active configuration.
-        /// </remarks>
-        public bool SetConfiguration(byte config)
+		/// <summary>
+		/// Sets the USB devices active configuration value. 
+		/// </summary>
+		/// <param name="config">The active configuration value. 
+		/// A zero value means the device is not configured and a non-zero value indicates the device is configured.
+		/// According to the libusb documentation, a value of -1 should be used to indicate unconfigured device.</param>
+		/// <returns>True on success.</returns>
+		/// <remarks>
+		/// A USB device can have several different configurations, but only one active configuration.
+		/// </remarks>
+		public bool SetConfiguration(short config)
         {
             int ret = MonoUsbApi.SetConfiguration((MonoUsbDeviceHandle) mUsbHandle, config);
             if (ret != 0)

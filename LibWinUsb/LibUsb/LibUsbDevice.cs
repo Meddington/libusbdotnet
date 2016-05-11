@@ -192,12 +192,14 @@ namespace LibUsbDotNet.LibUsb
         /// <summary>
         /// Sets the USB devices active configuration value. 
         /// </summary>
-        /// <param name="config">The active configuration value. A zero value means the device is not configured and a non-zero value indicates the device is configured.</param>
+        /// <param name="config">The active configuration value. 
+        /// A zero value means the device is not configured and a non-zero value indicates the device is configured.
+        /// According to the libusb documentation, a value of -1 should be used to indicate unconfigured device.</param>
         /// <returns>True on success.</returns>
         /// <remarks>
         /// A USB device can have several different configurations, but only one active configuration.
         /// </remarks>
-        public bool SetConfiguration(byte config)
+        public bool SetConfiguration(short config)
         {
             int uTransferLength;
 
