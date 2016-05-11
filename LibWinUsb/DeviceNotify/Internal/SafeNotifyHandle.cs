@@ -1,4 +1,4 @@
-// Copyright © 2006-2010 Travis Robinson. All rights reserved.
+// Copyright Â© 2006-2010 Travis Robinson. All rights reserved.
 // 
 // website: http://sourceforge.net/projects/libusbdotnet
 // e-mail:  libusbdotnet@gmail.com
@@ -36,7 +36,7 @@ namespace LibUsbDotNet.DeviceNotify.Internal
         {
             if (handle != IntPtr.Zero)
             {
-                bool bSuccess = WindowsDeviceNotifier.UnregisterDeviceNotification(handle);
+                WindowsDeviceNotifier.UnregisterDeviceNotification(handle);
                 handle = IntPtr.Zero;
             }
             return true;
