@@ -496,7 +496,7 @@ namespace LibUsbDotNet.LudnMonoLibUsb
         {
             configInfoListRtn = new List<UsbConfigInfo>();
             UsbError usbError = null;
-            List<MonoUsbConfigDescriptor> configList = new List<MonoUsbConfigDescriptor>();
+            //List<MonoUsbConfigDescriptor> configList = new List<MonoUsbConfigDescriptor>();
             int iConfigs = usbDevice.Info.Descriptor.ConfigurationCount;
 
             for (int iConfig = 0; iConfig < iConfigs; iConfig++)
